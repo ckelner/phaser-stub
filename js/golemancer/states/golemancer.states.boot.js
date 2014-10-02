@@ -4,7 +4,7 @@ Golemancer.states.boot.prototype = {
     this.load.image('preloader', 'assets/images/preloader.gif');
   },
   create: function() {
-    Golemancer.core.game.input.maxPointers = 1;
-    Golemancer.core.game.state.start('preload');
+    Golemancer.game.input.maxPointers = 1;
+    Golemancer.game.state.start('preload');
   }
 }

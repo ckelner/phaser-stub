@@ -1,7 +1,6 @@
 /**
-* Core functionality to the game.  This can include but is not limited to
-* global functions, global variables, helper functions, loading, preloading,
-* unloading, etc.
+* All possible game states.
+* Each state is implemented in its own namespace.
 **/
 Golemancer.states = {
   boot: function() {
