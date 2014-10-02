@@ -10,6 +10,7 @@ Golemancer.states = {
     /* see golemancer.state.preload.js */
     this.ready = false;
     this.asset = null;
+    this.start = false;
   },
   menu: function() {
     /* see golemancer.state.menu.js */

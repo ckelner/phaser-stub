@@ -15,9 +15,14 @@ var Golemancer = Golemancer || {};
 Golemancer = {
   game: null,
   debug: false,
+  canvasName: "phaser",
+  canvasDOM: null,
+  width: window.innerWidth,
+  height: window.innerHeight,
   load: function(){
     this.isDebugMode();
-    this.game = new Phaser.Game( window.innerWidth, window.innerHeight, Phaser.AUTO );
+    this.canvasDOM = document.getElementById( this.canvasName );
+    this.game = new Phaser.Game( this.width, this.height, Phaser.AUTO, this.canvasName );
     // Game States
     this.game.state.add('boot', this.states.boot);
     this.game.state.add('preload', this.states.preload);

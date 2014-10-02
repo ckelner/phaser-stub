@@ -7,7 +7,7 @@ Golemancer.states.gameover.prototype = {
     };
     this.titleText = Golemancer.game.add.text(
       Golemancer.game.world.centerX,
-      100,
+      150,
       'Game Over!',
       style
     );
@@ -20,7 +20,7 @@ Golemancer.states.gameover.prototype = {
     };
     this.congratsText = Golemancer.game.add.text(
       Golemancer.game.world.centerX,
-      200,
+      225,
       'You Win!',
       style
     );
@@ -33,7 +33,7 @@ Golemancer.states.gameover.prototype = {
     };
     this.instructionText = Golemancer.game.add.text(
       Golemancer.game.world.centerX,
-      300,
+      275,
       'Click To Play Again',
       style);
     this.instructionText.anchor.setTo(0.5, 0.5);

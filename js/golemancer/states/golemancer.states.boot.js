@@ -1,7 +1,7 @@
 // Boot state
 Golemancer.states.boot.prototype = {
   preload: function() {
-    this.load.image('preloader', 'assets/images/preloader.gif');
+    Golemancer.game.load.image('preloader', 'assets/images/preloader.gif');
   },
   create: function() {
     Golemancer.game.input.maxPointers = 1;
