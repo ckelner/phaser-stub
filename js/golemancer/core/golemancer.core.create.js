@@ -16,4 +16,6 @@ Golemancer.core.create = function() {
     'TWO DIMENSIONS!!!',
     style);
   twoDText.anchor.setTo(0.5, 0.5);
+  // set context to 3d to start
+  Golemancer.core.dimension.setCurrentContext3d();
 }

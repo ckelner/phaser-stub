@@ -1,6 +1,7 @@
 Golemancer.states.preload.prototype = {
   preload: function() {
     // TODO: Awesome jeef arts
+    // TODO: @ckelner => move out to some helper methods?
     var style = {
       font: '24px Arial',
       fill: '#ffffff',

@@ -1,6 +1,7 @@
 Golemancer.states.menu.prototype = {
   create: function() {
     // TODO: Awesome jeef arts
+    // TODO: @ckelner => Maybe abstract this out to some seperate methods
     var style = {
       font: '65px Arial',
       fill: '#ffffff',

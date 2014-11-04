@@ -11,4 +11,5 @@ Golemancer.core.update = function() {
   if(Golemancer.game.input.activePointer.justPressed()) {
     Golemancer.game.state.start('gameover');
   }
+  Golemancer.core.dimension.determineAndShowContext();
 }
