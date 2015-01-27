@@ -114,6 +114,14 @@ Golemancer.core.three.constructMenuScene = function() {
     Golemancer.core.three.renderer.render(Golemancer.core.three.scene, Golemancer.core.three.camera);
   };
   draw();
+  /*
+    @ckelner: a hacky way to get clickable objects in Threejs
+    (see this example: http://mrdoob.github.io/three.js/examples/canvas_interactive_cubes.html)
+  */
+  Golemancer.core.three.makeObjectsClickable();
+}
+Golemancer.core.three.makeObjectsClickable = function() {
+  document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 }
 /*
   @ckelner: helper function to build alike menu options
