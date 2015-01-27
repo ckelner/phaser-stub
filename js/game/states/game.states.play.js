@@ -1,18 +1,18 @@
 /*
   NOTES:
     - This is a shell for the state only.  Most if all logic should not be
-      implemented here.  Rather look at "js/golemancer/core/" for the
-      "golemancer.core.<function>.js" files.  These should map to the Phaser
+      implemented here.  Rather look at "js/game/core/" for the
+      "game.core.<function>.js" files.  These should map to the Phaser
       game functions.
 */
-Golemancer.states.play.prototype = {
+GameName.states.play.prototype = {
   create: function() {
-    Golemancer.core.create(this);
+    GameName.core.create(this);
   },
   render: function() {
-    Golemancer.core.render(this);
+    GameName.core.render(this);
   },
   update: function() {
-    Golemancer.core.update(this);
+    GameName.core.update(this);
   }
 };

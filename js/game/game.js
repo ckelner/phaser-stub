@@ -1,18 +1,20 @@
 /*
   NOTES:
     - Worth noting that the scope of "this" can be used mostly everywhere within
-      the codebase to refer to the "Golemancer" object, however it becomes tricky
+      the codebase to refer to the "GameName" object, however it becomes tricky
       once callbacks and intervals get introduced.  Therefore it is a best
-      practice to call the "Golemancer" object directly to avoid any ambiguity.
+      practice to call the "GameName" object directly to avoid any ambiguity.
 */
-// Instantiate the namespace
-var Golemancer = Golemancer || {};
+// Instantiate the game namespace
+// @ckelner: This was originally the name of the game, but since I OSS this, I've
+// replaced it with a generic "GameName" everywhere
+var GameName = GameName || {};
 /**
 * Core functionality to the game.  This can include but is not limited to
 * global functions, global variables, helper functions, loading, preloading,
 * unloading, etc.
 **/
-Golemancer = {
+GameName = {
   game: null,
   debug: false,
   canvasName: "phaser",
@@ -47,7 +49,7 @@ Golemancer = {
   }
 }
 // little hacky, but gets around some scope and loading issues
-function loadGolemancer(){
-  Golemancer.load();
+function loadGame(){
+  GameName.load();
 }
-window.onload = loadGolemancer;
+window.onload = loadGame;

@@ -1,5 +1,5 @@
 // 3d namespace
-Golemancer.core.three = {
+GameName.core.three = {
   canvas: null,
   scene: null,
   camera: null,
@@ -12,37 +12,37 @@ Golemancer.core.three = {
   whichScene: 1
 };
 // create 3d context
-Golemancer.core.three.create = function() {
+GameName.core.three.create = function() {
   // find old 3d dom el and delete that ish
-  Golemancer.core.three.delete3dDom();
+  GameName.core.three.delete3dDom();
   // shitty example code
   this.scene = new THREE.Scene();
   this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
   this.renderer = new THREE.WebGLRenderer();
   this.renderer.setSize(window.innerWidth, window.innerHeight);
-  this.renderer.domElement.id = Golemancer.core.three.domElIdVal;
+  this.renderer.domElement.id = GameName.core.three.domElIdVal;
   this.canvasDOM = document.body.appendChild(this.renderer.domElement);
-  Golemancer.core.three.render();
+  GameName.core.three.render();
 }
 // draw some shits.
 // @ckelner: this is some crappy draw stuff for now...
 /*
   Just POC placeholder shit
 */
-Golemancer.core.three.render = function() {
+GameName.core.three.render = function() {
   var draw = null;
   switch( this.whichScene ) {
     case 1: // "Menu"
-      Golemancer.core.three.constructMenuScene();
+      GameName.core.three.constructMenuScene();
     break;
   }
 }
-Golemancer.core.three.constructMenuScene = function() {
+GameName.core.three.constructMenuScene = function() {
   /*
     workshop
   */
   // workshop "object"
-  var wrkshp_object = Golemancer.core.three.menuSceneBuilder(
+  var wrkshp_object = GameName.core.three.menuSceneBuilder(
     1,
     1,
     1,
@@ -63,7 +63,7 @@ Golemancer.core.three.constructMenuScene = function() {
     Library
   */
   // library "object"
-  var lib_object = Golemancer.core.three.menuSceneBuilder(
+  var lib_object = GameName.core.three.menuSceneBuilder(
     1,
     1,
     1,
@@ -84,7 +84,7 @@ Golemancer.core.three.constructMenuScene = function() {
     Portal
   */
   // portal "object"
-  var port_object = Golemancer.core.three.menuSceneBuilder(
+  var port_object = GameName.core.three.menuSceneBuilder(
     1,
     1,
     1,
@@ -111,25 +111,27 @@ Golemancer.core.three.constructMenuScene = function() {
     lib_object.rotation.y += 0.005;
     port_object.rotation.x += 0.005;
     port_object.rotation.y += 0.005;
-    Golemancer.core.three.renderer.render(Golemancer.core.three.scene, Golemancer.core.three.camera);
+    GameName.core.three.renderer.render(GameName.core.three.scene, GameName.core.three.camera);
   };
   draw();
   /*
     @ckelner: a hacky way to get clickable objects in Threejs
     (see this example: http://mrdoob.github.io/three.js/examples/canvas_interactive_cubes.html)
   */
-  Golemancer.core.three.makeObjectsClickable();
+  // TODO: Incomplete
+  //GameName.core.three.makeObjectsClickable();
 }
-Golemancer.core.three.makeObjectsClickable = function() {
+// TODO: Incomplete
+GameName.core.three.makeObjectsClickable = function() {
   document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 }
 /*
   @ckelner: helper function to build alike menu options
 */
-Golemancer.core.three.menuSceneBuilder = function(geoX,geoY,geoZ,objectXPos,tex,word,wordSize,wordHeight,xPos,yPos,zPos,xRot,yRot) {
+GameName.core.three.menuSceneBuilder = function(geoX,geoY,geoZ,objectXPos,tex,word,wordSize,wordHeight,xPos,yPos,zPos,xRot,yRot) {
   var geometry = new THREE.BoxGeometry(geoX,geoY,geoZ);
   var texture = THREE.ImageUtils.loadTexture( tex );
-  texture.anisotropy = Golemancer.core.three.renderer.getMaxAnisotropy();
+  texture.anisotropy = GameName.core.three.renderer.getMaxAnisotropy();
   var material = new THREE.MeshBasicMaterial({map: texture});
   var object = new THREE.Mesh(geometry, material);
   object.position.x = objectXPos;
@@ -155,12 +157,12 @@ Golemancer.core.three.menuSceneBuilder = function(geoX,geoY,geoZ,objectXPos,tex,
 /**
   @ckelner: A better way of handling this might be to figure out how to just simply
   reuse the existing context?  Probably pretty easy by just doing an easy check
-  to see if the class 'Golemancer.core.three' properties are populated already;
+  to see if the class 'GameName.core.three' properties are populated already;
   Though there may be some good reasons to toss it out and start over...
 **/
 // deletes old 3d dom element (otherwise memoryleaks!)
-Golemancer.core.three.delete3dDom = function() {
-  var threeEl = document.getElementById( Golemancer.core.three.domElIdVal );
+GameName.core.three.delete3dDom = function() {
+  var threeEl = document.getElementById( GameName.core.three.domElIdVal );
   // if it already exists...
   if( threeEl ) {
     document.body.removeChild( threeEl );

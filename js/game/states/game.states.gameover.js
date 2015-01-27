@@ -1,12 +1,12 @@
-Golemancer.states.gameover.prototype = {
+GameName.states.gameover.prototype = {
   create: function () {
     var style = {
       font: '65px Arial',
       fill: '#ffffff',
       align: 'center'
     };
-    this.titleText = Golemancer.game.add.text(
-      Golemancer.game.world.centerX,
+    this.titleText = GameName.game.add.text(
+      GameName.game.world.centerX,
       150,
       'Game Over!',
       style
@@ -18,8 +18,8 @@ Golemancer.states.gameover.prototype = {
       fill: '#ffffff',
       align: 'center'
     };
-    this.congratsText = Golemancer.game.add.text(
-      Golemancer.game.world.centerX,
+    this.congratsText = GameName.game.add.text(
+      GameName.game.world.centerX,
       225,
       'You Win!',
       style
@@ -31,16 +31,16 @@ Golemancer.states.gameover.prototype = {
       fill: '#ffffff',
       align: 'center'
     };
-    this.instructionText = Golemancer.game.add.text(
-      Golemancer.game.world.centerX,
+    this.instructionText = GameName.game.add.text(
+      GameName.game.world.centerX,
       275,
       'Click To Play Again',
       style);
     this.instructionText.anchor.setTo(0.5, 0.5);
   },
   update: function () {
-    if(Golemancer.game.input.activePointer.justPressed()) {
-      Golemancer.game.state.start('play');
+    if(GameName.game.input.activePointer.justPressed()) {
+      GameName.game.state.start('play');
     }
   }
 };

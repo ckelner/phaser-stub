@@ -2,25 +2,25 @@
 * All possible game states.
 * Each state is implemented in its own namespace.
 **/
-Golemancer.states = {
+GameName.states = {
   boot: function() {
-    /* see golemancer.state.boot.js */
+    /* see game.state.boot.js */
   },
   preload: function() {
-    /* see golemancer.state.preload.js */
+    /* see game.state.preload.js */
     this.ready = false;
     this.asset = null;
     this.start = false;
   },
   menu: function() {
-    /* see golemancer.state.menu.js */
+    /* see game.state.menu.js */
   },
   play: function() {
-    /* see golemancer.state.play.js */
+    /* see game.state.play.js */
     this.jumpStart = null;
     this.tickityTock = 0;
   },
   gameover: function() {
-    /* see golemancer.stat.gameover.js */
+    /* see game.stat.gameover.js */
   }
 }

@@ -1,15 +1,15 @@
 /**
 * Render functionality for core gameplay from game state "Play"
 **/
-Golemancer.core.update = function() {
+GameName.core.update = function() {
   // calc the amount of time that has passed
-  _jump = Golemancer.game.time.elapsedSince(this.jumpStart)
+  _jump = GameName.game.time.elapsedSince(this.jumpStart)
   if( (this.tickityTock + 1000) - _jump <= 0 ) {
     this.tickityTock = _jump;
   }
-  Golemancer.core.collision.performCollisions();
-  if(Golemancer.game.input.activePointer.justPressed()) {
-    Golemancer.game.state.start('gameover');
+  GameName.core.collision.performCollisions();
+  if(GameName.game.input.activePointer.justPressed()) {
+    GameName.game.state.start('gameover');
   }
-  Golemancer.core.dimension.determineAndShowContext();
+  GameName.core.dimension.determineAndShowContext();
 }

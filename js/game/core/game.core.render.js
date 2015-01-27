@@ -1,8 +1,8 @@
 /**
 * Render functionality for core gameplay from game state "Play"
 **/
-Golemancer.core.render = function() {
-  if( Golemancer.debug ) {
+GameName.core.render = function() {
+  if( GameName.debug ) {
     // do some debugging
   }
 }

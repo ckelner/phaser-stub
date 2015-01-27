@@ -1,14 +1,14 @@
-Golemancer.states.menu.prototype = {
+GameName.states.menu.prototype = {
   create: function() {
-    // TODO: Awesome jeef arts
+    // TODO: Awesome arts
     // TODO: @ckelner => Maybe abstract this out to some seperate methods
     var style = {
       font: '65px Arial',
       fill: '#ffffff',
       align: 'center'
     };
-    var titleText = Golemancer.game.add.text(
-      Golemancer.game.world.centerX,
+    var titleText = GameName.game.add.text(
+      GameName.game.world.centerX,
       150,
       'GOLEMANCER',
       style);
@@ -18,16 +18,16 @@ Golemancer.states.menu.prototype = {
       fill: '#ffffff',
       align: 'center'
     };
-    var instructionsText = Golemancer.game.add.text(
-      Golemancer.game.world.centerX,
+    var instructionsText = GameName.game.add.text(
+      GameName.game.world.centerX,
       250,
       'Click anywhere to play',
       style);
     instructionsText.anchor.setTo(0.5, 0.5);
   },
   update: function() {
-    if(Golemancer.game.input.activePointer.justPressed()) {
-      Golemancer.game.state.start('play');
+    if(GameName.game.input.activePointer.justPressed()) {
+      GameName.game.state.start('play');
     }
   }
 };
